@@ -1,0 +1,39 @@
+<%- include('../layout/header'); %>
+
+    <main class="main">
+        <div class="container">
+            <div class="content">
+                <% for (let i = 0; i < posts.length; i++) { %>
+                <div class="post">
+                    <div class="post__title">
+                        <%= posts[i].title %>
+                    </div>
+                    <div class="post__body">
+                        <%= posts[i].body %>
+                    </div>
+                    <div class="post__footer">
+                        <div class="post__author">
+                        </div>
+                        <a href="/" class="link">Комментарии</a>
+                    </div>
+                </div>
+                <% } %>
+                <div class="pagination">
+                    <% if (pages > 0 && current > 2) { %>
+                        <a href="/users/<%=_user.login %>/<%= Number(current) - 1 %>" class="new">К новым ←</a>
+                    <% } %>
+                    <% if (pages > 0 && current == 2) { %>
+                        <a href="/users/<%=_user.login %>" class="new">На первую ←</a>
+                    <% } %>
+                    <% if (pages > 0 && current < pages) { %>
+                        <a href="/users/<%=_user.login %>/<%= Number(current) + 1 %>" class="old">К старым →</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <%- include('../layout/sidebar'); %>
+
+        </div>
+    </main>
+
+<%- include('../layout/footer'); %>

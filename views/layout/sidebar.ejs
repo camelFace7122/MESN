@@ -1,0 +1,58 @@
+<aside class="sidebar">
+    <div class="box">
+        <% if (!user.login) { %>
+            <form class="auth">
+                <h2 class="box__title">Вход</h2>
+                <div class="form-group">
+                    <label for="auth-login">Логин:</label>
+                    <input type="text" id="auth-login" name="login" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Пароль:</label>
+                    <input type="password" id="auth-password" name="password" class="form-input" />
+                </div>
+                <div class="buttons">
+                    <button class="switch-btn secondary-inverse">Регистрация</button>
+                    <button class="login-btn">Войти</button>
+                </div>
+            </form>
+
+            <form class="register">
+                <h2 class="box__title">Регистрация</h2>
+                <div class="form-group">
+                    <label for="register-login">Логин:</label>
+                    <input type="text" id="register-login" name="login" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Пароль:</label>
+                    <input type="password" id="register-password" name="password" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="register-passwordConfirm">Повторите пароль:</label>
+                    <input type="password" id="register-passwordConfirm" name="passwordConfirm" class="form-input" />
+                </div>
+                <div class="buttons">
+                    <button class="switch-btn secondary-inverse">Вход</button>
+                    <button class="register-btn">Зарегистрироваться</button>
+                </div>
+            </form>
+
+            <% } else { %>
+                <ul>
+                    <li>
+                        Привет, <a href="/users/<%= user.login %>" class="link"><%= user.login %></a>!
+                    </li>
+                    <li>
+                        <a href="/post/add" class="link">Добавить пост</a> 
+                    </li>
+                    <li>
+                        <a href="/api/auth/logout" class="link">Выйти</a>
+
+                    </li>
+                </ul>
+            <% } %>
+    </div>
+    <div class="box">
+        Box2
+    </div>
+</aside>

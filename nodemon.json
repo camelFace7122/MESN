@@ -1,0 +1,15 @@
+{
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules",
+        "public",
+        "src"
+    ],
+    "verbose": false,
+    "watch": "./",
+    "env": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+    },
+    "ext": "js,json,ejs"
+}

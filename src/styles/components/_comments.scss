@@ -1,0 +1,69 @@
+.comments {
+    margin-bottom: $freeSpace;
+    border: 1px solid $greyColor;
+    padding: $freeSpace;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    background-color: $whiteColor;
+    
+    .comments-title {
+        margin-top: 0;
+    }
+
+    form.comment {
+        display: none;
+        flex-direction: column;
+        max-width: 500px;
+        margin-top: $freeSpace * 1.5;
+
+        textarea {
+            margin-bottom: $freeSpace * 0.8;    
+        }
+        
+        button {
+            margin-left: $freeSpace;
+            &[disabled] {
+                cursor: wait;
+            }
+        }
+    }
+
+    .link {
+        text-decoration: none;
+        color: $primaryColor;
+        cursor: pointer
+    }
+
+    .comments-list {
+        ul {
+            padding-left: $freeSpace * 1.2;
+            border-left: 1px solid $greyColor;
+            
+            &:first-child {
+                padding-left: 0;
+                border-left: 0;
+            }
+
+            li {
+                display: flex;
+                flex-direction: column;
+                margin-top: $freeSpace;
+
+                .head {
+                    .date {
+                        margin-left: $freeSpace;    
+                        color: lighten($blackColor, 45%);
+                        font-style: italic;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+
+    #new {
+        display: block;
+        margin-top: $freeSpace
+    }
+}
